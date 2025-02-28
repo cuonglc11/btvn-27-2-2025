@@ -9,9 +9,8 @@ const listProduct = [
     },
 
 ]
-load(listProduct);
+load();
 function  addProduct() {
-    const listProductAdd = [];
     const productName = document.getElementById("productName").value;
     const productPrice = document.getElementById("productPrice").value;
      if(productName && productPrice) {
@@ -19,13 +18,14 @@ function  addProduct() {
             name: productName,
             price: parseInt(productPrice)
         }
-        listProductAdd.push(product);
-        load(listProductAdd);
+        listProduct.push(product);
+        load();
         return;
      }
      alert("Vui điền đầy đủ thông tin")
 }
-function load(listProduct) {
+function load() {
+    document.getElementById("listProduct").innerHTML= '';
     listProduct.forEach((item) => {
         document.getElementById("listProduct").innerHTML += `
           <tr>
