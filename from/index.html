@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>Price</td>
+        </tr>
+        <tbody id="listProduct">
+        </tbody>
+    </table>
+    <form>
+        <label for="fname">Product name:</label><br>
+        <input type="text" id="productName" name="productName" placeholder="name"><br>
+        <label for="lname">Product price:</label><br>
+        <input type="number" id="productPrice" name="productPrice" placeholder="Price"><br><br>
+        <input type="button" value="Submit" onclick="addProduct()">
+    </form>
+
+</body>
+<script src="./js/main.js"></script>
+
+</html>
