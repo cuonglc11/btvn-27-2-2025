@@ -14,19 +14,23 @@ function  addProduct() {
     const listProductAdd = [];
     const productName = document.getElementById("productName").value;
     const productPrice = document.getElementById("productPrice").value;
-    const product  = {
-        name: productName,
-        price: parseInt(productPrice)
-    }
-    listProductAdd.push(product);
-    load(listProductAdd);
+     if(productName && productPrice) {
+        const product  = {
+            name: productName,
+            price: parseInt(productPrice)
+        }
+        listProductAdd.push(product);
+        load(listProductAdd);
+        return;
+     }
+     alert("Vui điền đầy đủ thông tin")
 }
 function load(listProduct) {
     listProduct.forEach((item) => {
         document.getElementById("listProduct").innerHTML += `
           <tr>
             <td>${item.name}</td>
-            <td>${item.price}</td>
+            <td>${item.price} đ</td>
           </tr>
         `
     });
