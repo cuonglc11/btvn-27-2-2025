@@ -10,20 +10,16 @@ const listProduct = [
 
 ]
 load();
-function  addProduct() {
-    const productName = document.getElementById("productName").value;
-    const productPrice = document.getElementById("productPrice").value;
-     if(productName && productPrice) {
-        const product  = {
-            name: productName,
-            price: parseInt(productPrice)
-        }
-        listProduct.push(product);
-        load();
-        return;
-     }
-     alert("Vui điền đầy đủ thông tin")
-}
+document.getElementById("formJob").addEventListener("submit",function(e) {
+    e.preventDefault();
+    const form  = new FormData(e.target);
+    const product  = {
+        name: form.get("productName"),
+        price: parseInt(form.get("productPrice"))
+    }
+    listProduct.push(product);
+    load();
+})
 function load() {
     document.getElementById("listProduct").innerHTML= '';
     listProduct.forEach((item) => {
